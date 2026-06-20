@@ -34,9 +34,9 @@ import java.util.Arrays;
 //Thus, the answer is 2.  ©leetcode
 public class Q1 {
     static void main() {
-        int r = 204;
-        int l = 201;
-        int k = 2;
+        int r = 147;
+        int l = 15;
+        int k = 7;
         System.out.println(good(r,l,k));
     }
     static int good(int r, int l, int k){
@@ -57,8 +57,9 @@ public class Q1 {
         }
 //        return list;
         int n = list.size();
-        int m = list.get(0).size();
+
         for(int i=0; i<n; i++){
+            int m = list.get(i).size();
             int count = 0;
             for(int j=0; j<m-1; j++){
                 if(Math.abs(list.get(i).get(j) - list.get(i).get(j+1)) <= k){
