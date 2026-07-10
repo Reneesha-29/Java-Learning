@@ -8,16 +8,13 @@ public class Leetcode217 {
         System.out.println(duplicate(nums));
     }
     static boolean duplicate(int[] nums){
-        HashSet<Integer> seen = new HashSet<>();
-
-        // Step 2: Iterate through the array
-        for (int num : nums) {
-            // If the number is already in the set, a duplicate is found
-            if (!seen.add(num)) {
+        HashSet<Integer> uniq = new HashSet<>();
+        for(int i=0; i<nums.length; i++){
+            if(uniq.contains(nums[i])){
                 return true;
             }
+            uniq.add(nums[i]);
         }
-
         // No duplicates found
         return false;
     }
